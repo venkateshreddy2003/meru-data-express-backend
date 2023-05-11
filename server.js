@@ -13,7 +13,11 @@ dbConnect();
 //Middleware
 app.use(express.json());
 //cors
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use("/", router);
 app.use(notFound);
 app.use(errorHandler);
